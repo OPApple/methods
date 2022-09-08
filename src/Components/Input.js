@@ -2,12 +2,13 @@ import React from 'react'
 
 export const Input = (props) => {
   return (
-    <div className={props.name}>
-        <input id={props.inputName}>
-
+    <div className={props.style}>
+        <input className={props.inputStyle} id={props.inputName}>
         </input>
+
+        <div className={props.break}></div>
         
-        <button onClick={props.onClick}>{props.btnText}</button>
+        <button className={props.btnStyle} onClick={props.onClick}>{props.btnText}</button>
     </div>
   )
 }
