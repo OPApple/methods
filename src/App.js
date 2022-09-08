@@ -44,8 +44,6 @@ const bisect = (func, a, b) =>{
       a = c
     }
 
-
-
   }
   return(c.toFixed(3))
 
@@ -63,10 +61,19 @@ const clicked = (event) =>{
 
 function App() {
   return (
-    <div className="App">
-      <Input name="moi" inputName="input" btnText="moi" onClick={ (event) => {clicked(event)} }/>
-
-      <sapn id='result'></sapn>
+    <div className="flex h-screen flex-col flex-wrap justify-center items-center">
+      <Input 
+        style="text-center" 
+        inputStyle="bg-gray-200 focus:rounded-md ease-linear duration-200 my-2"  
+        inputName="input" 
+        break="flex-100" 
+        btnStyle="rounded-lg bg-blue-400 hover:bg-blue-500 ease-linear duration-500 w-60" 
+        btnText="Find roots" 
+        onClick={ (event) => {clicked(event)} }
+        />
+     
+     
+     <span className="" id='result'></span>
       
       
     </div>
