@@ -1,23 +1,52 @@
-import logo from './logo.svg';
-import './App.css';
+import { evaluate } from "mathjs";
+import { Input } from "./Components/Input";
+const Parser = require('expr-eval').Parser;
+const parser = new Parser()
+
+var x;
+
+const toMath = (text) =>{
+  return(parser.parse(text))
+}
+
+
+//Two functions for bolzano cause it makes reusing the values easier.
+const findPos = (func) =>{
+  for(let i = -100; i <= 100; i++){
+    if(func.evaluate({x: i}) > 0){
+      return(i)
+    }
+  }
+}
+
+const findNeg = (func) =>{
+  for(let i = -100; i <= 100; i++){
+    if(func.evaluate({x: i}) < 0){
+      return(i)
+    }
+  }
+}
+
+//Bisection interval is [a, b]
+const bisect = (func, a, b) =>{
+  
+}
+
+const clicked = (event) =>{
+  x = document.getElementById('input').value
+  x = toMath(x)
+  console.log(x.evaluate({x: 5}))
+}
+
+
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Input name="moi" inputName="input" btnText="moi" onClick={ (event) => {clicked(event)} }/>
+
+      
+      
     </div>
   );
 }
