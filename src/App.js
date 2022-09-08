@@ -62,6 +62,8 @@ const clicked = (event) =>{
 function App() {
   return (
     <div className="flex h-screen flex-col flex-wrap justify-center items-center">
+
+
       <Input 
         style="text-center" 
         inputStyle="bg-gray-200 focus:rounded-md ease-linear duration-200 my-2"  
@@ -73,7 +75,7 @@ function App() {
         />
      
      
-     <span className="" id='result'></span>
+     <span className="text-xl" id='result'></span>
       
       
     </div>
