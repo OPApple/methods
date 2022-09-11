@@ -61,7 +61,11 @@ const clicked = (event) =>{
 
 function App() {
   return (
-    <div className="flex h-screen flex-col flex-wrap justify-center items-center">
+    <div className="flex h-screen
+	  flex-col 
+	  flex-wrap 
+	  justify-center 
+	  items-center">
 
 
       <Input 
